@@ -456,6 +456,11 @@ export default class ImageViewer extends React.Component<Props, State> {
       },
       onPanResponderTerminate: () => {
         //
+      },
+      onShouldBlockNativeResponder: function() {
+        // 返回一个布尔值，决定当前组件是否应该阻止原生组件成为JS响应者
+        // 默认返回true。目前暂时只支持android。
+        return false;
       }
     });
   }
